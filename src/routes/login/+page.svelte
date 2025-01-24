@@ -1,9 +1,11 @@
 <script>
     import { navigate } from 'svelte-routing';
     import { setSessionKey } from '../../utils/session.js';
+  import { page } from '$app/state';
     let email = '';
     let password = '';
     let errorMessage = '';
+    let showPassword = false;
 
     const handleLogin = async () => {
       try {
@@ -30,21 +32,39 @@
     };
   </script>
 
-  <h2>Login</h2>
+  <div class="login-container">
+    <div class="login-prompt">
+      <h1>Login</h1>
 
-  {#if errorMessage}
-    <p style="color: red;">{errorMessage}</p>
-  {/if}
+      {#if errorMessage}
+        <p style="color: red;">{errorMessage}</p>
+      {/if}
 
       <form on:submit|preventDefault={handleLogin}>
         <label for="email">Email:</label>
         <input id="email" bind:value={email} required />
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" bind:value={password} required />
+        <label for="password">Password:</label>
 
-    <button type="submit">Login</button>
-  </form>
+        <div style="display: flex; align-items: center;">
+          <input style="flex-grow: 1; margin-right: 10px;" type={showPassword ? 'text' : 'password'} id="password" bind:value={password} required />
+
+          <button
+            type="button"
+            on:click={() => showPassword = !showPassword}
+            style="border: none; cursor: pointer; margin-top: -14px;"
+            aria-label={showPassword ? 'Hide password' : 'Show password'}
+          >
+            <i class={showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
+          </button>
+        </div>
+
+        <p>Have no account? <a href="/register{page.url.search}">Register!</a></p>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
 
   <style>
     .login-container {
@@ -109,7 +129,7 @@
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: var(--color-theme-2);
     }
 
     p {
