@@ -1,7 +1,7 @@
 <script>
     import { navigate } from 'svelte-routing';
     import { setSessionKey } from '../../utils/session.js';
-    let username = '';
+    let email = '';
     let password = '';
     let errorMessage = '';
 
@@ -9,7 +9,7 @@
       try {
         const response = await fetch('https://your-backend-api/login', {
           method: 'POST',
-          body: JSON.stringify({ username, password }),
+          body: JSON.stringify({ email, password }),
           headers: {
             'Content-Type': 'application/json'
           }
@@ -36,9 +36,9 @@
     <p style="color: red;">{errorMessage}</p>
   {/if}
 
-  <form on:submit|preventDefault={handleLogin}>
-    <label for="username">Username:</label>
-    <input id="username" bind:value={username} required />
+      <form on:submit|preventDefault={handleLogin}>
+        <label for="email">Email:</label>
+        <input id="email" bind:value={email} required />
 
     <label for="password">Password:</label>
     <input type="password" id="password" bind:value={password} required />
