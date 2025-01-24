@@ -45,3 +45,76 @@
 
     <button type="submit">Login</button>
   </form>
+
+  <style>
+    .login-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .login-prompt {
+      background-color: black;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #222222;
+      border-radius: 4px;
+      background-color: rgb(44, 44, 44);
+      color: white;
+    }
+
+    input:focus {
+      border-color: #036300;
+      outline: none;
+    }
+
+    button {
+      background-color: #036300;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+      margin-top: -10px;
+    }
+  </style>
