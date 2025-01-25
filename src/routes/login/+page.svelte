@@ -1,7 +1,7 @@
 <script>
     import { navigate } from 'svelte-routing';
     import { setSessionKey } from '../../utils/session.js';
-  import { page } from '$app/state';
+    import { page } from '$app/state';
     let email = '';
     let password = '';
     let errorMessage = '';
