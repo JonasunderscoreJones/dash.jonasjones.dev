@@ -18,7 +18,7 @@
 		<ul>
 			{#if ['/login', '/signup', '/register'].includes(page.url.pathname)}
 				<li aria-current={page.url.pathname === '/login' ? 'page' : undefined}>
-					<a href="\login{page.url.search}">Login</a>
+					<a href="/login{page.url.search}">Login</a>
 				</li>
 				<li aria-current={page.url.pathname === '/signup' ? 'page' : undefined}>
 					<a href="/signup{page.url.search}">Signup</a>
@@ -29,9 +29,6 @@
 				</li>
 				<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
 					<a href="/about">About</a>
-				</li>
-				<li aria-current={page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-					<a href="/sverdle">Sverdle</a>
 				</li>
 				{/if}
 		</ul>
