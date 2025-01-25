@@ -1,15 +1,20 @@
 <script>
     import { navigate } from 'svelte-routing';
     import { setSessionKey } from '../../utils/session.js';
+    import { page } from '$app/state';
+    let username = '';
+    let firstname = '';
+    let lastname = '';
     let email = '';
     let password = '';
     let errorMessage = '';
+    let showPassword = false;
 
     const handleLogin = async () => {
       try {
-        const response = await fetch('https://accounts.jonasjones.dev/login', {
+        const response = await fetch('https://accounts.jonasjones.dev/signup', {
           method: 'POST',
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ email, password, username, firstname, lastname }),
           headers: {
             'Content-Type': 'application/json'
           }
@@ -32,7 +37,7 @@
 
   <div class="login-container">
     <div class="login-prompt">
-      <h1>Login</h1>
+      <h1>Signup</h1>
 
       {#if errorMessage}
         <p style="color: red;">{errorMessage}</p>
@@ -40,14 +45,33 @@
 
       <form on:submit|preventDefault={handleLogin}>
         <label for="username">Username:</label>
-        <input id="username" bind:value={email} required />
+        <input id="username" bind:value={username} required />
+
+        <label for="firstname">First Name:</label>
+        <input id="firstname" bind:value={firstname} required />
+
+        <label for="lastname">Last Name:</label>
+        <input id="lastname" bind:value={lastname} required />
+
+        <label for="email">Email:</label>
+        <input id="email" bind:value={email} required />
 
         <label for="password">Password:</label>
-        <input type="password" id="password" bind:value={password} required />
 
-        <p>Have no account? <a href="/register">Register!</a></p>
+        <div style="display: flex; align-items: center;">
+          <input style="flex-grow: 1; margin-right: 10px;" type={showPassword ? 'text' : 'password'} id="password" bind:value={password} required />
 
-        <button type="submit">Login</button>
+          <button
+            type="button"
+            on:click={() => showPassword = !showPassword}
+            style="border: none; cursor: pointer; margin-top: -14px;"
+            aria-label={showPassword ? 'Hide password' : 'Show password'}
+          >
+            <i class={showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
+          </button>
+        </div>
+
+        <button type="submit">Signup</button>
       </form>
     </div>
   </div>
