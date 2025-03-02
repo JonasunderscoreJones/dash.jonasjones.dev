@@ -12,7 +12,7 @@
 
     const handleLogin = async () => {
       try {
-        const response = await fetch('https://accounts.jonasjones.dev/signup', {
+        const response = await fetch('https://accounts.jonasjones.dev/register', {
           method: 'POST',
           body: JSON.stringify({ email, password, username, firstname, lastname }),
           headers: {
