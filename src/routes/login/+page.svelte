@@ -23,6 +23,8 @@
           // Get the return URL from query parameters
           const returnUrl = new URLSearchParams(window.location.search).get('returnUrl') || '/';
           navigate(returnUrl);  // Redirect back to the requested path
+          // reload the page
+          location.reload();
         } else {
           errorMessage = 'Invalid login credentials';
         }
