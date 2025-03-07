@@ -86,12 +86,11 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      position: fixed;
-      top: 50px;
-      left: 0;
+      position: relative;
       align-items: center;
-      height: 100vh;
+      height: 80vh;
       width: 100vw;
+      margin-top: 25px;
     }
 
     .login-prompt {
