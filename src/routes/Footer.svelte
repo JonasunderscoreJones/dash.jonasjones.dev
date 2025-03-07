@@ -1,14 +1,9 @@
-<head>
-    <!-- Include Font Awesome CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-
 <div class="footer">
     <div class="footer-left">
-        <a href="https://github.com/JonasunderscoreJones" target="_blank"><i class="fab fa-github" /></a>
-        <a href="https://www.youtube.com/channel/UCVIxvKBIMSMgurYS8pK7fSg" target="_blank"><i class="fab fa-youtube" /></a>
-        <a href="https://discord.gg/V2EsuUVmWh" target="_blank"><i class="fab fa-discord" /></a>
-        <a href="mailto:me@jonasjones.dev" target="_blank"><i class="fas fa-envelope" /></a>
+        <a href="https://github.com/JonasunderscoreJones" target="_blank" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+        <a href="https://www.youtube.com/channel/UCVIxvKBIMSMgurYS8pK7fSg" target="_blank" aria-label="YouTube Link"><i class="fab fa-youtube"></i></a>
+        <a href="https://discord.gg/V2EsuUVmWh" target="_blank" aria-label="Discord Link"><i class="fab fa-discord"></i></a>
+        <a href="mailto:me@jonasjones.dev" target="_blank" aria-label="Email Link"><i class="fas fa-envelope"></i></a>
     </div>
 
     <p>Website by Jonas_Jones 2021 - <script>document.write(new Date().getFullYear());</script></p>
