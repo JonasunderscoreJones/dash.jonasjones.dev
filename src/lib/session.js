@@ -12,6 +12,11 @@ export function redirectToLogin() {
     window.location.href = `/login?returnUrl=${currentPath}`;
 }
 
+export function resetSession() {
+    document.cookie = `sessionKey=; path=/; max-age=0`;
+    window.location.href = '/login';
+}
+
 export function ensureAuthenticated() {
     if (!getSessionKey()) {
         redirectToLogin();
