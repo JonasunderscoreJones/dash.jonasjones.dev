@@ -4,18 +4,24 @@
 </svelte:head>
 
 <div class="text-column">
-	<h1>About this app</h1>
+	<h1>About this Dashboard</h1>
 
 	<p>
-		This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your own by typing
-		the following into your command line and following the prompts:
+		This is a Dashboard app for my Ecosystem's services.
+		The list and roadmap of supported services can be viewed in the 
+		<a href="https://github.com/JonasunderscoreJones/dash.jonasjones.dev/blob/main/README.md">README.md</a>
+		page of the github repository. Thus, the Dashboard is opensource in the same repository.
 	</p>
 
-	<pre>npx sv create</pre>
+	<p>
+		Signups are allowed to anyone. This is because the default user scope currently has no permissions.
+		However, the Dashboard is designed to be used with a user scope system. This means that the user scope
+		will be able to access services that are only available to them. Scopes are granted by an admin account.
+	</p>
 
 	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
+		Further are the accounts not limited to the Dashboard. They are their own entity, hosted on cloudflare workers.
+		Thus, the accounts are available to be used in other projects as well. The accounts are also opensource in the
+		<a href="https://github.com/JonasunderscoreJones/accounts.jonasjones.dev/">github repository</a>.
 	</p>
 </div>
