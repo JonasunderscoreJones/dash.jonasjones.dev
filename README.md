@@ -1,38 +1,21 @@
-# sv
+# Jonas_Jones Dashboard
+This Dashboard connects the settings and configurations of most of the services of my ecosystem
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Accounts
+It is possible for everyone to signup and get access to the settings, however most user scopes aren't available to the default user and need to be granted by an admin user.
 
-## Creating a project
+## Settings and Configurations
+The following are services that can be configured from the dashboard:
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+| Service Name | Description | Implemented |
+| ------------ | ----------- | ----------- |
+| accouts.jonasjones.dev | Account Management (scopes, deletion, creation, etc...) | No |
+| jonasjones.dev (Projects) | Project Management (update, add, delete) | No |
+| Analytics (stats.jonasjones.dev) | Management (delete, graphs) | No |
+| Rick-Roll-Tracker | Management (graphs) | No |
+| kcomebacks.jonasjones.dev | run scraper, graphs, etc... | No |
+| builds.jonasjones.dev | Add, remove, update | No |
+| blogs.jonasjones.dev | create, edit, delete Posts | No |
+| rss.jonasjones.dev | add, edit, delete entries | No |
+| API scripts | run, (probably not much more because security issues like remote code execution etc.) | No |
+| aka.jonasjones.dev | add, remove, edit aka entries | No |
