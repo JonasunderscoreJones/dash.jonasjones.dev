@@ -24,4 +24,8 @@
 		Thus, the accounts are available to be used in other projects as well. The accounts are also opensource in the
 		<a href="https://github.com/JonasunderscoreJones/accounts.jonasjones.dev/">github repository</a>.
 	</p>
+
+	<p>
+		Tldr; Dashboard is opensource and signup is public but has no permissions, unless explicitly granted by an admin.
+	</p>
 </div>
