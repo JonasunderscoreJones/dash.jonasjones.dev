@@ -1,6 +1,6 @@
 <script>
     import { navigate } from 'svelte-routing';
-    import { setSessionKey } from '$lib/session.js';
+    import { setSessionKey, ACCOUNTS_WORKER_URL } from '$lib/session.js';
     import { page } from '$app/state';
     let username = '';
     let firstname = '';
@@ -12,7 +12,7 @@
 
     const handleLogin = async () => {
       try {
-        const response = await fetch('https://accounts.jonasjones.dev/register', {
+        const response = await fetch(ACCOUNTS_WORKER_URL + '/register', {
           method: 'POST',
           body: JSON.stringify({ email, password, username, firstname, lastname }),
           headers: {

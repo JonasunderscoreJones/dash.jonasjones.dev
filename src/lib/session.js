@@ -1,3 +1,5 @@
+export const ACCOUNTS_WORKER_URL = 'https://accounts.jonasjones.dev';
+
 export function getSessionKey() {
     const match = document.cookie.match(/(^| )sessionKey=([^;]+)/);
     return match ? match[2] : null;
