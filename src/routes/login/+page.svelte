@@ -3,6 +3,7 @@
     import { onMount } from 'svelte';
     import { setSessionKey, redirectToHome, ACCOUNTS_WORKER_URL } from '$lib/session.js';
     import { page } from '$app/state';
+    import AlphaNotice from '$lib/components/AlphaNotice.svelte';
     let email = '';
     let password = '';
     let errorMessage = '';
@@ -42,6 +43,8 @@
   <div class="login-container">
     <div class="login-prompt">
       <h1>Login</h1>
+
+      <AlphaNotice />
 
       {#if errorMessage}
         <p style="color: red;">{errorMessage}</p>

@@ -2,6 +2,7 @@
     import { navigate } from 'svelte-routing';
     import { setSessionKey, ACCOUNTS_WORKER_URL } from '$lib/session.js';
     import { page } from '$app/state';
+    import AlphaNotice from '$lib/components/AlphaNotice.svelte';
     let username = '';
     let firstname = '';
     let lastname = '';
@@ -40,6 +41,8 @@
   <div class="login-container">
     <div class="login-prompt">
       <h1>Signup</h1>
+
+      <AlphaNotice />
 
       {#if errorMessage}
         <p style="color: red;">{errorMessage}</p>
@@ -141,7 +144,7 @@
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: var(--color-theme-2);
     }
 
     p {

@@ -1,3 +1,7 @@
+<script>
+	import AlphaNotice from "$lib/components/AlphaNotice.svelte";
+</script>
+
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
@@ -6,9 +10,11 @@
 <div class="text-column">
 	<h1>About this Dashboard</h1>
 
+	<AlphaNotice />
+
 	<p>
 		This is a Dashboard app for my Ecosystem's services.
-		The list and roadmap of supported services can be viewed in the 
+		The list and roadmap of supported services can be viewed in the
 		<a href="https://github.com/JonasunderscoreJones/dash.jonasjones.dev/blob/main/README.md">README.md</a>
 		page of the github repository. Thus, the Dashboard is opensource in the same repository.
 	</p>
