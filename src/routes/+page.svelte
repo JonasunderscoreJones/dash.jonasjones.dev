@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { ensureAuthenticated } from '../utils/session.js';
-
+	import { ensureAuthenticated } from '$lib/session.js';
 	onMount(() => {
 	  ensureAuthenticated(); // This will check the session key and redirect if necessary
 	});
