@@ -1,12 +1,16 @@
 <script>
     import { navigate } from 'svelte-routing';
     import { onMount } from 'svelte';
-    import { setSessionKey, ACCOUNTS_WORKER_URL } from '$lib/session.js';
+    import { setSessionKey, redirectToHome, ACCOUNTS_WORKER_URL } from '$lib/session.js';
     import { page } from '$app/state';
     let email = '';
     let password = '';
     let errorMessage = '';
     let showPassword = false;
+
+    onMount(() => {
+      redirectToHome(); // This will check the session key and redirect if necessary
+    });
 
     const handleLogin = async () => {
       try {

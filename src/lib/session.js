@@ -19,6 +19,15 @@ export function resetSession() {
     window.location.href = '/login';
 }
 
+export function redirectToHome() {
+    if (getSessionKey()) {
+        window.location.href = new URLSearchParams(window.location.search).get('returnUrl') || '/';
+        console.log(new URLSearchParams(window.location.search).get('returnUrl') || '/')
+    } else {
+        console.log(getSessionKey())
+    }
+}
+
 export function ensureAuthenticated() {
     if (!getSessionKey()) {
         redirectToLogin();
