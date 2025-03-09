@@ -10,7 +10,7 @@
 <div class="text-column">
 	<h1>About this Dashboard</h1>
 
-	<AlphaNotice />
+	<AlphaNotice expanded={true} />
 
 	<p>
 		This is a Dashboard app for my Ecosystem's services.

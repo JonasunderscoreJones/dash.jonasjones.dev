@@ -1,10 +1,18 @@
+<script>
+    export let expanded;
+</script>
+
 <div class="alpha-notice">
     <h2><b>This is an Alpha Version</b></h2>
-    <p>
-        Note that this Dashboard is in an alpha state. This means that there are bugs and missing features.
-        Please report any bugs or issues to the
-        <a href="https://github.com/JonasunderscoreJones/dash.jonasjones.dev/issues">GitHub repository</a>.
-    </p>
+    {#if expanded}
+        <p>
+            Note that this Dashboard is in an alpha state. This means that there are bugs and missing features.
+            Please report any bugs or issues to the
+            <a href="https://github.com/JonasunderscoreJones/dash.jonasjones.dev/issues">GitHub repository</a>.
+        </p>
+    {:else}
+        <a href="/about">More Info</a>
+    {/if}
 </div>
 
 <style>
