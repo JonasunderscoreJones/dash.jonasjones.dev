@@ -15,13 +15,21 @@
 
     const handleLogin = async () => {
       try {
+        // Check if email is a valid email address
+        const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        // If it's not a valid email, rename it to 'username'
+        const loginData = isValidEmail ? { email } : { username: email };
+
+        // Make the fetch request with either 'email' or 'username'
         const response = await fetch(ACCOUNTS_WORKER_URL + '/login', {
           method: 'POST',
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ ...loginData, password }),
           headers: {
             'Content-Type': 'application/json'
           }
         });
+
         const data = await response.json();
         if (data.sessionKey) {
           // Set session key as a cookie
@@ -51,7 +59,7 @@
       {/if}
 
       <form on:submit|preventDefault={handleLogin}>
-        <label for="email">Email:</label>
+        <label for="email">Email or Username:</label>
         <input id="email" bind:value={email} required />
 
         <label for="password">Password:</label>
